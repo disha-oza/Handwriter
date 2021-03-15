@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>HANDWRITER</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
+		<link rel="stylesheet" href="https://milligram.io/styles/main.css">
+		<link rel="stylesheet" href="assets/css/custom.css">
+		
+        
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav class="navigation">
+				<div class="container">
+					<div class="navigation-title" >						
+						&nbsp;
+						<h1 class="title">HANDWRITER</h1>
+					</div>
+					<ul class="navigation-list float-right">
+						<li class="navigation-item">
+							<label class="switch">
+								<input type="checkbox" id="darkmode" onclick='darkLightToggle()'>
+								<span class="slider round"></span>
+							  </label>
+						</li>
+					</ul>					
+				</div>
+			</nav>
+
+
+			<section class="container" id="examples">
+				<h3 class="title">Write Text</h3>
+
+
+				<form onsubmit="return false">
+					<fieldset>
+						<textarea placeholder="Enter Text You want to be written a paper...." id="dataField" onkeyup="myData = this.value"></textarea>
+					</fieldset>
+
+
+					<input class="button-primary button-large download-image hidden" type="file" id="pageUploader" onclick="">
+					<input class="button-primary button-large download-image hidden" type="file" id="fontUploader" onclick="">
+
+
+					<div class="row">
+						<button class="column button-primary button-large inline-btn" id="btnPageUpload">Upload Page</button>
+						<button class="column button-primary button-large inline-btn" onclick="loadPage()">Default Page</button>
+						<button class="column button-primary button-large inline-btn" onclick="changeFont()">Switch Font</button>
+						<button class="column button-primary button-large inline-btn" id="btnFontUpload" onclick="uploadFont()">Upload Your Font</button>
+						<button class="column button-primary button-large download-image inline-btn" onclick="save(str(pageNum++))">Download Page</button>
+					</div>
+
+
+					<div class="row">
+						<div class="column">
+							<label>Adjust X axis</label>
+							<!-- range sliders-w3  -->
+							<input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="slider">
+						</div>
+						<div class="column">
+							<label>Adjust Y axis</label>
+							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="slider">
+						</div>
+						<div class="column">
+							<label>Font Size</label>
+							<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)" class="slider">
+						</div>
+						<div class="column">
+							<label>width</label>
+							<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" class="slider">
+						</div>
+						<div class="column">
+							<label>Line Spacing</label>
+							<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" class="slider">
+						</div>
+					</div>
+				</form>
+
+
+				<div id="contributing"></div>
+			</section>
+
+			
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+		<script src="assets/js/script.js"></script>
+		<script src="assets/js/sketch.js"></script>
+
+	</body>
+</html>
